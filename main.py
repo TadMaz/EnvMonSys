@@ -90,6 +90,14 @@ def ADCTEMP(value):
 def reset():
     TIMER = time.time()
 
+LDR_MAX_VOLTAGE = 2.5 # Calibrated Max when really dark.
+LDR_MIN_VOLTAGE = 0.5 # Calibrated Min when really lit. 
+def ADCfromLDR(value):
+    res = 1024
+    max = 3.3
+    voltage = max/(res - 1) * value # The voltage across the LDR
+    return (LDR_MAX_VOLTAGE - voltage)/(LDR_MAX_VOLTAGE - LDR_MIN_VOLTAGE * 100)
+
 def main():
     while (READ):
         READINGS.append(Reading(
