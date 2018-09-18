@@ -89,3 +89,10 @@ def ADCTEMP(value):
 
 def reset():
     TIMER = time.time()
+
+def main():
+    while (READ):
+        READINGS.append(Reading(
+            time.time(), MCP.read_adc(0), MCP.read_adc(1), MCP.read_adc(2)
+            ))
+        time.sleep(1/FREQ)
