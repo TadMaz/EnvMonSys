@@ -86,3 +86,6 @@ def ADCTEMP(value):
     max =3.3
     voltage = max/(levels-1)* value
     return temp
+
+def reset():
+    TIMER = time.time()
