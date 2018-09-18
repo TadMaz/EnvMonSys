@@ -16,7 +16,7 @@ SPICS = 8
 
 # Global variables
 FREQ = 0
-TIMER
+TIMER = 0
 
 spi = spidev.SpiDev()
 spi.open(0,0)
@@ -45,13 +45,10 @@ def switch_frequency():
 
 
 def reset():
-    // Reset Timer
-    // Clean console
-
+    TIMER = time.time()
 
 def stop():
-    # Start monitoring
-    # Stop monitoring
+    READ = False
 
 
 def display():
