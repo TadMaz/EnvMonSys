@@ -75,3 +75,24 @@ class Reading:
     def printReading(self):
         print("{0:8} {1:8} {2:3}V {3:2}C {4:2}%"
               .format(self.time, self.timer, self.pot, self.light))
+
+def ADCPOT(value):
+    max = 3.3
+    levels = 1024
+    return max/(levels-1) *value
+
+def ADCTEMP(value):
+    levels = 1024
+    max =3.3
+    voltage = max/(levels-1)* value
+    return temp
+
+def reset():
+    TIMER = time.time()
+
+def main():
+    while (READ):
+        READINGS.append(Reading(
+            time.time(), MCP.read_adc(0), MCP.read_adc(1), MCP.read_adc(2)
+            ))
+        time.sleep(1/FREQ)
